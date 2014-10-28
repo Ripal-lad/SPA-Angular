@@ -1,0 +1,23 @@
+﻿
+
+<div ng-init="DepartmentList()">
+    <div id="depttable">
+      
+      <!--  <pre>{{department | json}}</pre>-->
+        <table class="table">
+
+            <tr><td><h2 style='color:blue'> Department Details  </h2></td></tr>
+            <tr><td><a href="#/">Home</a>|<a href="javascript:void(0)" ng-click="Create()">Create New</a></td></tr>
+            <tr><td><b>Department</b></td></tr>
+            <tbody ng-repeat="dept in department">
+                <tr>
+                    <td> {{dept.DName}} </td>
+
+                    <td><a href="javascript:void(0)" ng-click="Edit(dept.DName,dept.ID)">Edit</a></td>
+                    <td><a href="#/Details/{{dept.ID}}/{{dept.DName}}" ng-click="Detail(dept.DName,dept.ID)">Detail</a></td>
+                    <td><a href="javascript:void(0)" ng-click="Delete(dept.DName,dept.ID)">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

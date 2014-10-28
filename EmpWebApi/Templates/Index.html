@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" ng-controller="DeptController" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../Content/css/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+
+                <a href="#/" class="navbar-brand">Home</a>
+                <a href="#/EmployeeList/" class="navbar-brand">Employee</a>
+                <a href="#/DepartmentList/" class="navbar-brand">Department</a>
+
+            </div>
+
+            <div class="container body-content" style="text-align:center">
+                <h4 id="loading" style="color:black;display:none"><span style="background-color: yellow"> Loading...</span></h4>
+            </div>
+
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container body-content jumbotron">
+        <ng-view> </ng-view>
+    </div>
+
+
+    <!--Home page --
+
+    <div class="container body-content jumbotron" id="index">
+
+        <h2 style="color:blue"><u>Employee Management System</u></h2>
+        <p class="lead" style="color:chocolate">
+            Employee management system makes it easy to check the details of Employees and Department.
+        </p>
+
+        <div ng-controller="EmpController">
+            <a href="javascript:void(0)" ng-click="EmployeeList()">Employee Detail</a>
+        </div>
+        <div ng-controller="DeptController">
+            <a href="javascript:void(0)" ng-click="DepartmentList()">Department Detail</a>
+        </div>
+    </div>
+    <!--<a href="#/DepartmentList/">Department Detail</a>
+        <pre>{{department | json}}</pre>-->
+    <!--Department table--
+    <div class="container body-content jumbotron"  id="depttable" style="display:none">
+        <table class="table">
+
+            <tr><td><h2 style='color:blue'> Department Details  </h2></td></tr>
+            <tr><td><a href="#/">Home</a>|<a href="javascript:void(0)" ng-click="Create()">Create New</a></td></tr>
+            <tr><td><b>Department</b></td></tr>
+            <tbody ng-repeat="dept in department">
+                <tr>
+                    <td> {{dept.DeptName}} </td>
+
+                    <td><a href="javascript:void(0)" ng-click="Edit(dept.DeptName,dept.Id)">Edit</a></td>
+                    <td><a href="javascript:void(0)" ng-click="Detail(dept.DeptName,dept.Id)">Detail</a></td>
+                    <td><a>Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+        <!--Add department--
+        <div class="container body-content jumbotron" id="AddDepartment" style="display:none">
+            <h2 style='color:blue'>
+                Create new department
+            </h2>
+            <table>
+
+                <tr>
+                    <td>Department Name:</td>
+                    <td><input id='txtdept' ng-model="DeptName" placeholder="Enter department name "><div id="error" style="color:red"></div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="javascript:void(0)" ng-click="Add()" class="btn btn-default">Create</a>
+                        <a href="#/CancelAddDept/" class=" btn btn-default">Cancel</a>
+                    </td>
+                </tr>
+                <tr><td><a href="#/BackToDeptList/" ng-click="Back()">Back to List</a></td></tr>
+            </table>
+        </div>
+
+        <!--Department Edit--
+        <div id="Departmenttupdate" style="display:none">
+            <table>
+
+                <tr>
+
+                    <td>Department Name:</td>
+                    <td><input id='txtdept' ng-model="DeptName" value="{{DeptName}}"><div id="Error" style="color:red"></div></td>
+                    <td><input type="hidden" id='txtid' ng-bind="{{Id}}" value="{{Id}}"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a class="btn btn-default" ng-click="Update()">Update</a>
+                        <a class="btn btn-default">Cancel</a>
+                    </td>
+                </tr>
+                <tr><td><a href="#/BackToDeptList/" ng-click="Back()">Back to List</a></td></tr>
+            </table>
+        </div>
+
+        <!--Department Detail--
+        <div id="Deptdetail" style="display:none">
+
+            <h2 style="color:blue">  Details of {{DeptName}}</h2>
+            <a href="#/BackToDeptList/">Back to List</a>
+            <table class="table" cellpadding="10" cellspacing="20" id="deptdetailtable">
+                <tr><td><b>Name</b></td><td><b>Designation</b></td><td><b>Emailid</b></td><td><b>Contactno</b></td></tr>
+                <tr><td>{{Name}}</td><td>{{Designation}}</td><td>{{Emailid}}</td><td>{{Contactno}}</td></tr>
+                <tr><td><a href="#/BackToDeptList/" ng-click="Back()">Back to List</a></td></tr>
+            </table>
+        </div>
+
+        <!-- Details not found Department--
+        <div id="detailnotfound" style="display:none">
+
+            <h2 style="color:blue">  Details of {{DeptName}}</h2>
+
+            <table class="table" cellpadding="10" cellspacing="20">
+                <tr><td> No data found</td></tr>
+                <tr><td><a href="#/BackToDeptList/" ng-click="Back()">Back to List</a></td></tr>
+            </table>
+
+        </div>
+    -->
+    </div>
+
+    <script src="../Scripts/jquery-2.1.1.min.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+    <script src="../JavaScripts/Empangular.js"></script>
+
+    <script src="../JavaScripts/DeptController.js"></script>
+
+</body>
+</html>

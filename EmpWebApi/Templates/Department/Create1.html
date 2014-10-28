@@ -1,0 +1,19 @@
+﻿<div class="container body-content jumbotron" id="AddDepartment" >
+    <h2 style='color:blue'>
+        Create new department
+    </h2>
+    <table>
+
+        <tr>
+            <td>Department Name:</td>
+            <td><input id='txtdept' ng-model="DeptName" placeholder="Enter department name "><div id="error" style="color:red"></div></td>
+        </tr>
+        <tr>
+            <td>
+                <a href="javascript:void(0)" ng-click="Add()" class="btn btn-default">Create</a>
+                <a href="javascript:void(0)" ng-click="Cancel()" class=" btn btn-default">Cancel</a>
+            </td>
+        </tr>
+        <tr><td><a href="javascript:void(0)" ng-click="Back()">Back to List</a></td></tr>
+    </table>
+</div>

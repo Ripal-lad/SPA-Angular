@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../Content/css/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+
+                <a href="#/" class="navbar-brand">Home</a>
+                <a href="#/EmployeeList/" class="navbar-brand">Employee</a>
+                <a href="#/DepartmentList/" class="navbar-brand">Department</a>
+
+            </div>
+
+            <div class="container body-content" style="text-align:center">
+                <h4 id="loading" style="color:black;display:none"><span style="background-color: yellow"> Loading...</span></h4>
+            </div>
+
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--  <div class="container body-content jumbotron" id="Home">
+
+          <!--Home page --
+          <div id="index" style="display:none">
+
+              <h2 style="color:blue"><u>Employee Management System</u></h2>
+              <p class="lead" style="color:chocolate">
+                  Employee management system makes it easy to check the details of Employees and Department.
+              </p>
+
+              <div>
+                  <a href="#/EmployeeList/">Employee Detail</a>
+              </div>
+              <div>
+                  <a href="#/DepartmentList/">Department Detail</a>
+
+              </div>
+          </div>
+          <!--Department table--
+          <div id="DeptIndex">
+              <table class="table">
+                  <tr><td><h2 style='color:blue'> Department Details  </h2></tr></td>
+                  <tr><td><a href="#/">Home</a>|<a href="#/AddDepartment/0">Create New</a></td></tr>
+                  <tr><td><b>Department</b></td></tr>
+                 <tbody data-bind="foreach:tasks">
+                      <tr>
+                          <td data-bind="text:Department" class="table"> </td>
+
+                          <td><a data-bind="attr: { href : DeptUpdateUrl}" class="table">Edit</a></td>
+                          <td><a data-bind="attr: { href : DeptDetailUrl}" class="table">Detail</a></td>
+                          <td><a data-bind="attr: { href : DeptDeletelUrl}" class="table">Delete</a></td>
+                      </tr>
+                     </tbody>
+                  </table>
+
+          </div>
+
+          <!--Department create--
+          <div id="Deptcreate" style="display:none">
+              <h2 style='color:blue'>
+                  Create new department
+              </h2>
+              <table>
+
+                  <tr>
+                      <td>Department Name:</td>
+                      <td><input id='txtdept' data-bind="value:Department" placeholder="Enter department name "><div id="error" style="color:red"></div></td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <a href="#/CreateDeparment/" class="btn btn-default">Create</a>
+                          <a href="#/CancelAddDept/" class=" btn btn-default">Cancel</a>
+                      </td>
+                  </tr>
+                  <tr><td><a href="#/BackToDeptList/">Back to List</a></td></tr>
+              </table>
+          </div>
+
+          <!--Department Detail--
+          <div id="Deptdetail" style="display:none">
+
+              <h2 style="color:blue">  Details of <span data-bind="text :Department "></span></h2>
+              <a href="#/BackToDeptList/">Back to List</a>
+              <table class="table" cellpadding="10" cellspacing="20" id="deptdetailtable">
+                  <tr><td><b>Name</b></td><td><b>Designation</b></td><td><b>Emailid</b></td><td><b>Contactno</b></td></tr>
+              </table>
+          </div>
+          </div>
+      <script src="Scripts/jquery-2.1.1.min.js"></script>
+      <script src="Scripts/knockout-3.2.0.js"></script>
+      <script src="Scripts/Sammy.js"></script>
+      <script src="Content/js/department.js"></script>-->
+</body>
+
+</html>

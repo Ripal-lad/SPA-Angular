@@ -1,0 +1,31 @@
+﻿
+
+<div ng-init="Detail()"><!-- <pre>{{departmentdetail | json}}</pre>-->
+    <div id="Deptdetail" style="display:none">
+        <table class="table" cellpadding="10" cellspacing="20" id="deptdetailtable">
+            <tr><h2 style="color:blue">  Details of {{DeptName}}</h2></tr>
+            <tr><td><b>Name</b></td><td><b>Designation</b></td><td><b>Emailid</b></td><td><b>Contactno</b></td></tr>
+            <tbody ng-repeat="dept in departmentdetail">
+                <tr>
+                    <td> {{dept.Name}} </td>
+                    <td> {{dept.Designation}}</td>
+                    <td> {{dept.Emailid}}</td>
+                    <td> {{dept.Contactno}}</td>
+                </tr>
+            </tbody>
+            <tr><td><a href="javascript:void(0)" ng-click="Back()">Back to List</a></td></tr>
+        </table>
+
+    </div>
+</div>
+
+<div id="detailnotfound" style="display:none">
+
+    <h2 style="color:blue">  Details of {{DeptName}}</span></h2>
+
+    <table class="table" cellpadding="10" cellspacing="20">
+        <tr><td> No data found</td></tr>
+        <tr><td><a href="javascript:void(0)" ng-click="Back()">Back to List</a></td></tr>
+    </table>
+
+</div>
