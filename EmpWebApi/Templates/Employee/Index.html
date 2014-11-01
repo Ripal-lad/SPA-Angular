@@ -1,0 +1,18 @@
+﻿<div ng-init="EmployeeList()">
+    <h2 style='color:blue'> Employee Details  </h2>
+    <a href="#/">Home</a>|<a href="#/AddEmployee/" ng-click="Create()">Create New</a>
+    <table class="table">
+       
+            <tr><td><b>Name</b></td><td><b>Designation</b></td><td><b>Emailid</b></td><td><b>Contactno</b></td></tr>
+        <tbody ng-repeat="emp in EmpList    ">
+
+            <tr><td>{{emp.Name}}</td>
+            <td>{{emp.Designation}}</td>
+            <td>{{emp.Emailid}}</td>
+            <td>{{emp.ContactNo}}</td>
+            <td><a href="#/UpdateEmployee/{{emp.ID}}/{{emp.Name}}" ng-click="UpdateEmployee()">Edit</a></td>
+            <td><a href="#/EmployeeDetails/{{emp.ID}}/{{emp.Name}}" ng-click="EmployeeDetails()">Detail</a></td>
+            <td><a href="javascript:void(0)" ng-click="DeleteEmployee(emp.Name,emp.ID)">Delete</a></td>
+            </tr>
+</tbody></table>
+</div>

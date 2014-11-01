@@ -1,0 +1,48 @@
+﻿<div ng-init="UpdateEmployee()">
+
+    <table class="table">
+        <tr><td id="msg" style="display:none;color:red" class="text-center">Details of {{Empdata.Name}} Updated successfully</></td></tr>
+        <tr><td><h2 style='color:blue'> Update details of {{Empdata.Name}}</h2></td></tr>
+        <tr>
+            <td><input type="hidden" ng-model="Empdata.ID" id="txtid"></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" ng-model="Empdata.Name" placeholder="Enter name "><div id="errorname1" style="color:red"></div></td>
+        </tr>
+        <tr>
+            <td>Designation:</td>
+            <td><input type="text" ng-model="Empdata.Designation" placeholder="Enter designation "><div id="errordesignation1" style="color:red"></div></td>
+        </tr>
+
+        <tr>
+            <td>Emailid:</td>
+            <td><input type="text" ng-model="Empdata.Emailid" placeholder="Enter Emailid "><div id="erroremailid1" style="color:red"></div></td>
+        </tr>
+        <tr>
+            <td>ContactNo:</td>
+            <td><input type="text" ng-model="Empdata.ContactNo" placeholder="Enter ContactNo "><div id="errorcontactno1" style="color:red"></div></td>
+        </tr>
+        <tr>
+            <td>Department:</td>
+            <td>
+                <select id='select' ng-model="DeptName" ng-options="dept.DName for dept in department ">
+                    <option value="">-- Select department --</option>
+                </select> <div id="errordept" style="color:red"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="javascript:void(0)" ng-click="EditEmployee(Empdata,DeptName)" class="btn btn-default">Update</a>
+                <a href="javascript:void(0)" ng-click="UpdateCancel()" class="btn btn-default">Cancel</a>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="javascript:void(0)" ng-click="BackToEmpList()">Back to List</a>
+            </td>
+        </tr>
+    </table>
+
+</div>

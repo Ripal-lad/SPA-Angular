@@ -11,27 +11,40 @@ namespace EmpWebApi.Controllers
     public class DepartmentController : ApiController
     {
        // static readonly IEmpRepository repository = new IEmpRepository();
-        IDepartmentRepository _repository = new EmpRepository();
+         IDepartmentRepository _repository = new EmpRepository();
 
+      
+        [Route("api/department/deleteDepartment/{id?}")]
+        [HttpPost]
+        public void deleteDepartment(int id)
+        {
+            //Department item = _repository.Get(id);
+            //if (item == null)
+            //{
+            //    throw new HttpResponseException(HttpStatusCode.NotFound);
+            //}
+
+            _repository.Remove(id);
+        }
         public IEnumerable<Department> Get()
         {
             return _repository.GetAll();
         }
-
         //public IEnumerable<Employee> GetEmp()
         //{
         //    return _repository.GetEmployee();
         //}
 
-        public IHttpActionResult GetAll(int id)
-        {
-            var product = _repository.Get(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            return Ok(product);
-        }
+        //public IHttpActionResult GetAll(int id)
+        //{
+        //    var product = _repository.Get(id);
+        //    if (product == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(product);
+        //}
+
 
         //Add department.
         public HttpResponseMessage PostDepartment(Department item)
@@ -47,35 +60,26 @@ namespace EmpWebApi.Controllers
         //Update department
         // [Route("api/department/{id:int}")]
         //[HttpPut]
-        public void PutDepartment(int id, Department dept)
+        [Route("api/department/updateDepartment")]
+        [HttpPost]
+        public void Department(Department department)
         {
-            dept.ID = id;
-            if (!_repository.Update(dept))
+          //  dept.ID = id;
+            if (!_repository.Update(department))
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
         }
 
-        public Department GetDepartment(int id)
+        public IHttpActionResult GetDepartment(int id)
         {
            Department item = _repository.Get(id);
             if (item == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
-            return item;
+            return Ok(item);
         }
-        [Route("api/department/deleteDepartment")]
-        [HttpPost]
-        public void deleteDepartment(int id)
-        {
-            Department item = _repository.Get(id);
-            if (item == null)
-            {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            }
-
-            _repository.Remove(id);
-        }
+      
     }
 }

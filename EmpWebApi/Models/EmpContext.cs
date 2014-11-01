@@ -30,16 +30,21 @@ namespace EmpWebApi.Models
             //public IEnumerable<Employee> GetEmployee()
             //{
             //    return db.Employee;
+            ////}
+            //public EmpRepository(private $resource: ng.resource.IResourceService){
+            //  this.updateSelectedProject = $resource(apiPaths.updateProject); 
             //}
             public IEnumerable<Department> GetAll()
             {
                 return db.Department;
-            }
+             }
 
           
             public Department Get(int id)
         {
-            return department.Find(p => p.ID == id);
+            var department = db.Department.Find(id);
+            return department;
+            //return department.Find(p => p.ID == id);
         }
 
             public Department Add(Department item)
@@ -57,30 +62,33 @@ namespace EmpWebApi.Models
 
         public void Remove(int id)
         {
-            department.RemoveAll(p => p.ID == id);
+            var dept = db.Department.Find(id);
+            db.Department.Remove(dept);
+            db.SaveChanges();
+         //   department.RemoveAll(p => p.ID == id);
         }
 
-        public bool Update(Department item)
+        public bool Update(Department department)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException("item");
-            }
-            int index = department.FindIndex(p => p.ID == item.ID);
-            if (index == -1)
-            {
-                return false;
-            }
-            department.RemoveAt(index);
-            department.Add(item);
+
+            db.Entry(department).State = EntityState.Modified;
+            db.SaveChanges();
+
+            //if (item == null)
+            //{
+            //    throw new ArgumentNullException("item");
+            //}
+            //int index = department.FindIndex(p => p.ID == item.ID);
+            //if (index == -1)
+            //{
+            //    return false;
+            //}
+            //department.RemoveAt(index);
+            //department.Add(item);
             return true;
         }
 
-            //public void Dispose()
-            //{
-            //    Dispose(true);
-            //    GC.SuppressFinalize(this);
-            //}
+          
         }
     
     }

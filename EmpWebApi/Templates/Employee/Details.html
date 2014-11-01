@@ -1,0 +1,34 @@
+﻿
+
+<div ng-init="EmployeeDetails()">
+    <table class="table">
+        <tr><td><h2 style='color:blue'>Details of {{Empdata.Name}} </h2></td></tr>
+
+        <tr>
+            <td><b>Name:</b></td>
+            <td>{{Empdata.Name}}</td>
+        </tr>
+        <tr>
+            <td><b>Designation:</b></td>
+            <td>{{Empdata.Designation}}</td>
+        </tr>
+        <tr>
+            <td><b>Department:</b></td>
+            <td>{{DeptName.DName}}</td>
+        </tr>
+        <tr>
+            <td><b>Emailid:</b></td>
+            <td>{{Empdata.Emailid}}</td>
+        </tr>
+        <tr>
+            <td><b>ContactNo:</b></td>
+            <td>{{Empdata.ContactNo}}</td>
+        </tr>
+
+        <tr>
+            <td>
+                <a href="javascript:void(0)" ng-click="BackToEmpList()">Back to List</a>
+            </td>
+        </tr>
+    </table>
+</div>

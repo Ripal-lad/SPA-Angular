@@ -1,0 +1,45 @@
+﻿<div ng-init="Create()">
+   <!-- <pre>{{department | json}}</pre>-->
+    <table class="table">
+        <h2 style='color:blue'> Create Employee </h2>
+        <tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" ng-model="Name" placeholder="Enter name "><div id="errorname" style="color:red"></div></td>
+        </tr>
+        <tr>
+            <td>Designation:</td>
+            <td><input type="text" ng-model="Designation" placeholder="Enter designation "><div id="errordesignation" style="color:red"></div></td>
+        </tr>
+
+        <tr>
+            <td>Emailid:</td>
+            <td><input type="text" ng-model="Emailid" placeholder="Enter Emailid "><div id="erroremailid" style="color:red"></div></td>
+        </tr>
+        <tr>
+            <td>ContactNo:</td>
+            <td><input type="text" ng-model="ContactNo" placeholder="Enter ContactNo "><div id="errorcontactno" style="color:red"></div></td>
+        </tr>
+        <tr>
+            <td>Department:</td>
+            <td>
+                <select id='select' ng-model="DeptName" ng-options="dept.DName for dept in department ">
+                 
+                </select> <div id="errordept" style="color:red"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="javascript:void(0)" ng-click="Add(Name,Designation,Emailid,ContactNo,department)" class="btn btn-default">Create</a>
+                <a href="javascript:void(0)" ng-click="AddCancel()" class="btn btn-default">Cancel</a>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="javascript:void(0)" ng-click="BackToEmpList()">Back to List</a>
+            </td>
+        </tr>
+    </table>
+
+</div>

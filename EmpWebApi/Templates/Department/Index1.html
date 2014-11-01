@@ -13,7 +13,7 @@
                 <tr>
                     <td> {{dept.DName}} </td>
 
-                    <td><a href="javascript:void(0)" ng-click="Edit(dept.DName,dept.ID)">Edit</a></td>
+                    <td><a href="#/UpdateDepartment/{{dept.ID}}/{{dept.DName}}" ng-click="Edit(dept.DName,dept.ID)">Edit</a></td>
                     <td><a href="#/Details/{{dept.ID}}/{{dept.DName}}" ng-click="Detail(dept.DName,dept.ID)">Detail</a></td>
                     <td><a href="javascript:void(0)" ng-click="Delete(dept.DName,dept.ID)">Delete</a></td>
                 </tr>

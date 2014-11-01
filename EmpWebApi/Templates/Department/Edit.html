@@ -1,0 +1,21 @@
+﻿
+<div ng-init="Edit()">
+    <span id="msg" style="display:none;color:red" class="text-center">Details of {{DeptName.DName}} updated successfully</span>
+    <h2 style='color:blue'>
+        Update department
+    </h2>
+<table>
+    <tr>
+    <tr>
+        <td>Department Name:</td>
+        <td><input id='txtdept' ng-model="DeptName.DName" placeholder="Enter department name "><div id="error" style="color:red"></div></td>
+    </tr>
+    <tr>
+        <td>
+            <a href="javascript:void(0)" ng-click="Update()" class="btn btn-default">Update</a>
+            <a href="javascript:void(0)" ng-click="CancelUpdate()" class=" btn btn-default">Cancel</a>
+        </td>
+    </tr>
+    <tr><td><a href="javascript:void(0)" ng-click="Back()">Back to List</a></td></tr>
+</table>
+</div>
