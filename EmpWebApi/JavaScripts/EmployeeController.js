@@ -1,7 +1,7 @@
 ﻿
 app.controller("EmployeeController", ["$scope", "$resource", "$route", "eventData", function ($scope, $resource, $route, eventData) {
     $scope.hellomessage = "This is angular demo";
-   // alert("Empcontroller");
+    alert("Empcontroller");
     $scope.EmpList = {};
     $scope.department;
     $scope.DeptName;
@@ -169,12 +169,12 @@ app.controller("EmployeeController", ["$scope", "$resource", "$route", "eventDat
         $("#erroremailid1").html("");
         $("#errorcontactno1").html("");
         $("#errordesignation1").html("");
-        alert("deptid = "+DeptId+" || "+DeptName.ID)
+      //  alert("deptid = "+DeptId+" || "+DeptName.ID)
         var regexemail = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         var regexname = /^[A-Z]+[a-zA-Z''-'\s]*$/;
         var regdesignation = /^[A-Za-z- ]+$/;
-
-        alert(Name + " || " + Designation + " || " + ContactNo + " || " + Emailid + " || " + DeptId);
+        var flag = false;
+      //  alert(Name + " || " + Designation + " || " + ContactNo + " || " + Emailid + " || " + DeptId);
         if (Emailid != undefined) {
             if (!(Emailid.match(regexemail))) {
                 $("#erroremailid1").html("Invalid Email-id");

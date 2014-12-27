@@ -1,5 +1,5 @@
 ﻿
-var app = angular.module("app", ['ngRoute', 'ngResource']);
+var app = angular.module("app", ['ngRoute', 'ngResource'],alert("app"));
 //.service('$apply', function () { /* ... */ });//alert("hello");
  
 var apiPaths = {
@@ -9,10 +9,10 @@ var apiPaths = {
     deleteEmployee: "/api/employee/deleteEmployee",
     updateEmployee: "/api/employee/updateEmployee",
 }
+
+//Routing.
 app.config(function ($routeProvider) {
-   // alert("config");
     $routeProvider.when('/', {
-        //controller: 'DeptController',
         templateUrl: '/Templates/Home/Index.html'
     })
     .when('/DepartmentList', {
@@ -35,17 +35,6 @@ app.config(function ($routeProvider) {
           templateUrl: '/Templates/Department/Edit.html',
           controller: 'DepartmentController',
       })
-   
-    //.when('/CancelAddDept', {
-    ////    url: '/AddDepartment',
-    //    controller: 'DeptController',
-    //    templateUrl: '/Templates/Department/Create.html',
-       
-    //})
-    //.when('/BackToDeptList', {
-    //    controller: 'DeptController',
-    //    templateUrl: '/Templates/Department/Index.html'
-    // })
 
     .when('/EmployeeList', {
 

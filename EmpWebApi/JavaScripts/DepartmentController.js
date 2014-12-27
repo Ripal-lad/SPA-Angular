@@ -17,6 +17,7 @@ app.controller("DepartmentController", ["$scope", "$http", "$route", "$location"
     $scope.DepartmentList = function () {
    //  alert("department");
         departmentData.getDepartment().then(function (data) {
+            console.log(JSON.stringify(data));
             $scope.department = data;
         });
     }
